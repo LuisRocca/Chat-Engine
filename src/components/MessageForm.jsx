@@ -5,6 +5,7 @@ import { sendMessage, isTyping } from 'react-chat-engine';
 const MessageForm = (props) => {
   const [value, setValue] = useState('');
   const { chatId, creds } = props;
+  // console.log(props)
 
   const handleChange = (event) => {
     setValue(event.target.value);
@@ -26,7 +27,10 @@ const MessageForm = (props) => {
 
   const handleUpload = (event) => {
     sendMessage(creds, chatId, { files: event.target.files, text: '' });
+   
   };
+
+//  ESTA ES LA BARRA DNDE ESCRIBIMOS EL MENSAGE 
 
   return (
     <form className="message-form" onSubmit={handleSubmit}>
@@ -39,7 +43,7 @@ const MessageForm = (props) => {
       />
       <label htmlFor="upload-button">
         <span className="image-button">
-          <PictureOutlined className="picture-icon" />
+           <PictureOutlined className="picture-icon" /> {/* aca es donde permito subir fotos */}
         </span>
       </label>
       <input

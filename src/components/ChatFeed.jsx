@@ -1,4 +1,4 @@
-import MessageForm from "./messageForm";
+import MessageForm from "./MessageForm";
 import MyMessage from "./MyMessage";
 import TheirMessage from "./TheirMessage";
 
@@ -6,6 +6,8 @@ const ChatFeed = (props) => {
   const { chats, activeChat, userName, messages } = props;
 
   const chat = chats && chats[activeChat];
+
+  // digo donde se ve el mensaje si es tuyo o de otro usuario MENSGES
 
   const renderReadReceipts = (message, isMyMessage) => chat.people.map((person, index) => person.last_read === message.id && (
     <div
